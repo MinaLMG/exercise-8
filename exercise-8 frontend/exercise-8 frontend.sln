@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercise-8 frontend", "exercise-8 frontend\exercise-8 frontend.csproj", "{ECEE3220-98FC-4B17-ACBC-EEF6006724AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECEE3220-98FC-4B17-ACBC-EEF6006724AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECEE3220-98FC-4B17-ACBC-EEF6006724AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECEE3220-98FC-4B17-ACBC-EEF6006724AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECEE3220-98FC-4B17-ACBC-EEF6006724AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {97794C45-298F-445E-861E-584E1C59AAB3}
+	EndGlobalSection
+EndGlobal
