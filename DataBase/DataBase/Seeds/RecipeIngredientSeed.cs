@@ -26,14 +26,14 @@ namespace Database.Seeds
             //    (Guid.Parse("b12c7e14-81d5-46f2-a6a1-b322627d5d7c"),Guid.Parse("f8262fa4-5c33-45aa-895a-33b904488b8b"),3),
             //};
 
-            foreach ((Guid,Guid,int,Guid) recipeCategory in seeds)
+            foreach ((Guid,Guid,int,Guid) recipeIngredient in seeds)
             {
                 Insert.IntoTable(tableName: Tables.RecipesIngredients).Row(new
                 {
-                    id = recipeCategory.Item4,
-                    recipe = recipeCategory.Item1,
-                    category = recipeCategory.Item2,
-                    rank = recipeCategory.Item3,
+                    id = recipeIngredient.Item4,
+                    recipe = recipeIngredient.Item1,
+                    category = recipeIngredient.Item2,
+                    rank = recipeIngredient.Item3,
                 });
             }
 

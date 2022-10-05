@@ -7,8 +7,8 @@ namespace DataBase.Migrations
         public override void Up()
         {
             Create.Table("RecipeIngredient")
-                .WithColumn("recipe").AsString()
-                .WithColumn("category").AsString()
+                .WithColumn("recipe").AsGuid()
+                .WithColumn("category").AsGuid()
                 .WithColumn("rank").AsInt32()
                 .WithColumn("id").AsGuid().PrimaryKey();
         }
