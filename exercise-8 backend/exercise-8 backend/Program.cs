@@ -11,6 +11,13 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Swashbuckle.AspNetCore.Filters;
+using ex_8.DatabaseSpecific;
+using ex_8.EntityClasses;
+using ex_8.Linq;
+using SD.LLBLGen.Pro.DQE.PostgreSql;
+using SD.LLBLGen.Pro.LinqSupportClasses;
+using SD.LLBLGen.Pro.ORMSupportClasses;
+using System.Xml.Linq;
 
 var builder = WebApplication.CreateBuilder();
 builder.Services.AddCors(options =>

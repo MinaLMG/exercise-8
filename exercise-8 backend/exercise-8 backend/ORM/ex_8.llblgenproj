@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--LLBLGen Pro v5.9 project file. Do not manually edit this file. Incorrect references could lead to an unloadable project file.-->
+<Project Version="5.9" TargetFrameworkName="LLBLGen Pro Runtime Framework" UseLegacyDefaults="false">
+  <Properties>
+    <Abbreviations />
+    <Property Name="AdditionalTaskPerformerFolder" Value="" />
+    <Property Name="AdditionalTasksFolder" Value="" />
+    <Property Name="AdditionalTemplatesFolder" Value="" />
+    <Property Name="AdditionalTypeConverterFolder" Value="" />
+    <Property Name="AddNewElementsAfterRefresh_v5" Value="false" />
+    <Property Name="AddNewElementsAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="AddNewFieldsAfterRefresh_v5" Value="true" />
+    <Property Name="AddNewFieldsAfterRelationalModelDataSync_v5" Value="true" />
+    <Property Name="AddNewViewsAsEntitiesAfterRefresh_v5" Value="false" />
+    <Property Name="AddNewViewsAsEntitiesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="AutoAddManyToManyRelationships" Value="false" />
+    <Property Name="AutoAssignSequencesToIntegerPks" Value="true" />
+    <Property Name="AutoAssignTypeConverterToFieldMapping" Value="true" />
+    <Property Name="AutomaticallyGenerateSourceCodeOnProjectSave" Value="false" />
+    <Property Name="ConnectionStringKeyNamePattern" Value="ConnectionString.{$ProviderName}" />
+    <Property Name="DefaultDDLSQLScriptDestinationFolder" Value=".\DDLSQLScripts" />
+    <Property Name="DefaultDeleteRuleAction" Value="1" />
+    <Property Name="DefaultSourceCodeDestinationFolder" Value=".\Code" />
+    <Property Name="DefaultUpdateRuleAction" Value="0" />
+    <Property Name="DeleteObsoleteFiles" Value="true" />
+    <Property Name="ElementNamePrefixPattern" Value="{$SchemaName}" />
+    <Property Name="ElementNamePrefixPatternIsAppliedWhen" Value="1" />
+    <Property Name="EncodingToUse" Value="0" />
+    <Property Name="EntityActionCombinationDefaultForTable" Value="0" />
+    <Property Name="EntityActionCombinationDefaultForView" Value="4" />
+    <Property Name="EntityFieldNameStripPattern" Value="{}{}" />
+    <Property Name="EntityNameStripPattern" Value="{tbl_}{}" />
+    <Property Name="ExcludableOrphanedElementDetectedAction" Value="3" />
+    <Property Name="FailCodeGenerationOnWriteError" Value="false" />
+    <Property Name="FieldMappedOntoRelatedFieldPattern" Value="{$RelatedFieldName}" />
+    <Property Name="FkFieldsAreNamedAfterTargetField" Value="true" />
+    <Property Name="ForeignKeyConstraintPattern" Value="FK_{$Guid}" />
+    <Property Name="ForeignKeyFieldPattern" Value="{$NavigatorName}{$RelatedFieldName}" />
+    <Property Name="GroupUsage" Value="0" />
+    <Property Name="IdentifyingFieldsFollowDBPrimaryKeyConstraints_v5" Value="true" />
+    <Property Name="InsertUnderscoreAtWordBreakCaseInsensitiveDBs" Value="false" />
+    <Property Name="InsertUnderscoreAtWordBreakCaseSensitiveDBs" Value="false" />
+    <Property Name="LengthPrecisionScaleFollowDBLengthPrecisionScale_v5" Value="true" />
+    <Property Name="MakeElementNamePascalCasing" Value="true" />
+    <Property Name="NavigatorMappedOntoManyToManyPattern" Value="{$EndEntityName}CollectionVia{$IntermediateEntityName$S}" />
+    <Property Name="NavigatorMappedOntoOneManyToOnePattern" Value="{$EndEntityName$S}" />
+    <Property Name="NavigatorMappedOntoOneToManyPattern" Value="{$EndEntityName$P}" />
+    <Property Name="NonExcludableOrphanedElementDetectedAction" Value="3" />
+    <Property Name="PreferDecimalOverCurrencyTypes" Value="true" />
+    <Property Name="PreferNaturalCharacterTypes" Value="true" />
+    <Property Name="PreferSystemSequencesOverSchemaSequencesIfApplicable" Value="true" />
+    <Property Name="PreferVariableLengthTypes" Value="true" />
+    <Property Name="PrimaryKeyConstraintPattern" Value="PK_{$Guid}" />
+    <Property Name="ProjectCreator" Value="mina" />
+    <Property Name="ProjectName" Value="ex_8" />
+    <Property Name="ReflectNullabilityOfElementFieldInTargetField_v5" Value="false" />
+    <Property Name="ReflectTypeOfElementFieldInTargetField_v5" Value="true" />
+    <Property Name="RelationalModelDataElementNameCasingCaseInsensitiveDBs" Value="3" />
+    <Property Name="RelationalModelDataElementNameCasingCaseSensitiveDBs" Value="3" />
+    <Property Name="RelationshipsFollowDBForeignKeyConstraints_v5" Value="true" />
+    <Property Name="RemoveUnderscoresFromElementName" Value="true" />
+    <Property Name="RemoveUnmappedElementsAfterRefresh_v5" Value="false" />
+    <Property Name="RemoveUnmappedElementsAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="ResetFieldOrderBasedOnTargetOrderAtRefresh" Value="false" />
+    <Property Name="ResetFieldOrderBasedOnTargetOrderAtRelationalModelDataSync" Value="false" />
+    <Property Name="RetrieveDBCustomProperties" Value="false" />
+    <Property Name="RootNamespace" Value="" />
+    <Property Name="SequenceNameMatchingPattern" Value="SEQ_{$TableName}" />
+    <Property Name="SequencePattern" Value="SEQ_{$EntityName}" />
+    <Property Name="SetGroupNameAfterSchemaName" Value="true" />
+    <Property Name="SetSchemaNameAfterGroupName" Value="true" />
+    <Property Name="SingularizeElementNames" Value="true" />
+    <Property Name="StoredProcNameStripPattern" Value="{pr_, sp_}{}" />
+    <Property Name="StoreTimeLastGeneratedIntoProject" Value="false" />
+    <Property Name="StoreTimeLastSyncIntoProject" Value="true" />
+    <Property Name="SyncCustomFieldOrderingWithTableFieldIndex" Value="false" />
+    <Property Name="SyncMappedElementNamesAfterRefresh_v5" Value="false" />
+    <Property Name="SyncMappedElementNamesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="SyncRelationalModelDataElementNameWithModelElementName_v5" Value="false" />
+    <Property Name="SyncRenamedMappedElementNamesAfterRefresh_v5" Value="false" />
+    <Property Name="SyncRenamedMappedElementNamesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="TableValuedFunctionNameStripPattern" Value="{fn_, pr_, sp_}{}" />
+    <Property Name="TargetPerEntityEdgesRequireBackingFkConstraint" Value="true" />
+    <Property Name="TypedViewFieldNameStripPattern" Value="{}{}" />
+    <Property Name="TypedViewMappedOnResultsetPattern" Value="{$ProcFunctionName}{$ResultsetName}Result" />
+    <Property Name="TypedViewNameStripPattern" Value="{vw_}{}" />
+    <Property Name="UniqueConstraintPattern" Value="UC_{$Guid}" />
+    <Property Name="UniqueConstraintsFollowDBUniqueConstraints_v5" Value="true" />
+    <Property Name="UpdateCustomPropertiesAfterRefresh_v5" Value="false" />
+    <Property Name="UpdateCustomPropertiesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="UseCustomFieldOrderingOnNewElements" Value="false" />
+  </Properties>
+  <TypeShortcuts />
+  <IgnoredWarnings />
+  <SavedSearchQueries />
+  <CodeGenerationCyclePreferences>
+    <OutputType Value="3">
+      <LastUsedPreferences>
+        <DestinationRootFolder Value=".\Code" />
+        <FrameworkName Value="LLBLGen Pro Runtime Framework" />
+        <LanguageName Value="C#" />
+        <PlatformName Value=".NET 4.8.0" />
+        <PresetName Value="SD.Presets.Adapter.General" />
+        <RootNamespace Value="ex_8" />
+        <TemplateGroup Value="Adapter" />
+        <TemplateBindings>
+          <Binding Name="SD.TemplateBindings.AccessSpecific" />
+          <Binding Name="SD.TemplateBindings.DB2Specific" />
+          <Binding Name="SD.TemplateBindings.FirebirdSpecific" />
+          <Binding Name="SD.TemplateBindings.MySqlSpecific" />
+          <Binding Name="SD.TemplateBindings.OracleMSSpecific" />
+          <Binding Name="SD.TemplateBindings.OracleODPNetSpecific" />
+          <Binding Name="SD.TemplateBindings.PostgreSqlSpecific" />
+          <Binding Name="SD.TemplateBindings.SharedTemplates.Deprecated" />
+          <Binding Name="SD.TemplateBindings.SharedTemplates.NET45x" />
+          <Binding Name="SD.TemplateBindings.SharedTemplates" />
+          <Binding Name="SD.TemplateBindings.SqlServerSpecific" />
+          <Binding Name="SD.TemplateBindings.General" />
+        </TemplateBindings>
+        <AdhocTemplateSets />
+      </LastUsedPreferences>
+    </OutputType>
+  </CodeGenerationCyclePreferences>
+  <CodeGenerationMetaDataDefaults>
+    <TargetElement Type="256">
+      <Defaults>
+        <Attributes>
+          <Attribute Value="Browsable($false)" />
+        </Attributes>
+      </Defaults>
+    </TargetElement>
+  </CodeGenerationMetaDataDefaults>
+  <EntityModel>
+    <ValueTypeDefinitions />
+    <EntityDefinitions>
+      <EntityDefinition Name="Category" ObjectID="3e72e1db-e7c4-4db0-8a80-9944079daf83">
+        <Fields>
+          <Field Name="Id" Type="guid" IsPrimaryKey="true" />
+          <Field Name="Name" Type="string" MaxLength="1073741824" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="Ingredient" ObjectID="fae1540b-423d-4c3f-a7cc-2c9f93ae8159">
+        <Fields>
+          <Field Name="Content" Type="string" MaxLength="1073741824" />
+          <Field Name="Id" Type="guid" IsPrimaryKey="true" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="Instruction" ObjectID="0f1c7ac5-8711-452b-96af-92923930b91b">
+        <Fields>
+          <Field Name="Content" Type="string" MaxLength="1073741824" />
+          <Field Name="Id" Type="guid" IsPrimaryKey="true" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="Recipe" ObjectID="7a77fb9e-8ed0-49d8-b22e-1c2a51f5be88">
+        <Fields>
+          <Field Name="Id" Type="guid" IsPrimaryKey="true" />
+          <Field Name="Title" Type="string" MaxLength="1073741824" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="RecipeCategory" ObjectID="b2e7a1a6-f2f7-4b78-ad43-bed57014b997">
+        <Fields>
+          <Field Name="Category" Type="string" MaxLength="1073741824" />
+          <Field Name="Id" Type="guid" IsPrimaryKey="true" />
+          <Field Name="Recipe" Type="string" MaxLength="1073741824" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="RecipeIngredient" ObjectID="f6e928c8-db72-49d0-b5ff-757bc154672f">
+        <Fields>
+          <Field Name="Category" Type="string" MaxLength="1073741824" />
+          <Field Name="Id" Type="guid" IsPrimaryKey="true" />
+          <Field Name="Rank" Type="int" Precision="10" />
+          <Field Name="Recipe" Type="string" MaxLength="1073741824" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="RecipeInstruction" ObjectID="0ab82a91-2142-4f6f-bc3c-51f39e89e4a7">
+        <Fields>
+          <Field Name="Category" Type="string" MaxLength="1073741824" />
+          <Field Name="Id" Type="guid" IsPrimaryKey="true" />
+          <Field Name="Rank" Type="int" Precision="10" />
+          <Field Name="Recipe" Type="string" MaxLength="1073741824" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="User" ObjectID="32862a20-3649-467f-a7dd-36003a335939">
+        <Fields>
+          <Field Name="Id" Type="guid" IsPrimaryKey="true" />
+          <Field Name="PasswordHash" Type="string" MaxLength="1073741824" />
+          <Field Name="PasswordSalt" Type="string" MaxLength="1073741824" />
+          <Field Name="TokenCreatedAt" Type="datetime" />
+          <Field Name="TokenExpiresAt" Type="datetime" />
+          <Field Name="UserName" Type="string" MaxLength="1073741824" />
+        </Fields>
+      </EntityDefinition>
+    </EntityDefinitions>
+    <Relationships />
+    <InheritanceHierarchies />
+  </EntityModel>
+  <TargetDatabases>
+    <TargetDatabase Type="88EBFD8C-CBDD-4452-88AF-1C99E41A123F" SyncSource="2">
+      <ConnectionElements>
+        <ConnectionElement Name="ServerName" Value="vm1.practicalasp.com" />
+        <ConnectionElement Name="CatalogName" Value="mina" />
+        <ConnectionElement Name="UserID" Value="mina" />
+        <ConnectionElement Name="Password" Value="" />
+        <ConnectionElement Name="PortNumber" Value="5432" />
+        <ConnectionElement Name="SslMode" Value="Disable" />
+      </ConnectionElements>
+      <SystemSequences>
+        <Sequence Name="SystemIdentity" />
+      </SystemSequences>
+      <Catalogs>
+        <Catalog Name="mina" SyncSource="2">
+          <Schemas>
+            <Schema Name="public" SyncSource="2" LastSyncWithDatabase="2022-10-05T10:54:04.5267059Z">
+              <Tables>
+                <Table Name="Category">
+                  <PkConstraintName Name="PK_Category" />
+                  <Fields>
+                    <Field Name="name" Ordinal="1" DbType="19" Length="1073741824" />
+                    <Field Name="id" Ordinal="2" IsPrimaryKey="true" DbType="28" />
+                  </Fields>
+                </Table>
+                <Table Name="Ingredient">
+                  <PkConstraintName Name="PK_Ingredient" />
+                  <Fields>
+                    <Field Name="content" Ordinal="1" DbType="19" Length="1073741824" />
+                    <Field Name="id" Ordinal="2" IsPrimaryKey="true" DbType="28" />
+                  </Fields>
+                </Table>
+                <Table Name="Instruction">
+                  <PkConstraintName Name="PK_Instruction" />
+                  <Fields>
+                    <Field Name="content" Ordinal="1" DbType="19" Length="1073741824" />
+                    <Field Name="id" Ordinal="2" IsPrimaryKey="true" DbType="28" />
+                  </Fields>
+                </Table>
+                <Table Name="Recipe">
+                  <PkConstraintName Name="PK_Recipe" />
+                  <Fields>
+                    <Field Name="title" Ordinal="1" DbType="19" Length="1073741824" />
+                    <Field Name="id" Ordinal="2" IsPrimaryKey="true" DbType="28" />
+                  </Fields>
+                </Table>
+                <Table Name="RecipeCategory">
+                  <PkConstraintName Name="PK_RecipeCategory" />
+                  <Fields>
+                    <Field Name="recipe" Ordinal="1" DbType="19" Length="1073741824" />
+                    <Field Name="category" Ordinal="2" DbType="19" Length="1073741824" />
+                    <Field Name="id" Ordinal="3" IsPrimaryKey="true" DbType="28" />
+                  </Fields>
+                </Table>
+                <Table Name="RecipeIngredient">
+                  <PkConstraintName Name="PK_RecipeIngredient" />
+                  <Fields>
+                    <Field Name="recipe" Ordinal="1" DbType="19" Length="1073741824" />
+                    <Field Name="category" Ordinal="2" DbType="19" Length="1073741824" />
+                    <Field Name="rank" Ordinal="3" DbType="9" Precision="10" />
+                    <Field Name="id" Ordinal="4" IsPrimaryKey="true" DbType="28" />
+                  </Fields>
+                </Table>
+                <Table Name="RecipeInstruction">
+                  <PkConstraintName Name="PK_RecipeInstruction" />
+                  <Fields>
+                    <Field Name="recipe" Ordinal="1" DbType="19" Length="1073741824" />
+                    <Field Name="category" Ordinal="2" DbType="19" Length="1073741824" />
+                    <Field Name="rank" Ordinal="3" DbType="9" Precision="10" />
+                    <Field Name="id" Ordinal="4" IsPrimaryKey="true" DbType="28" />
+                  </Fields>
+                </Table>
+                <Table Name="User">
+                  <PkConstraintName Name="PK_User" />
+                  <Fields>
+                    <Field Name="userName" Ordinal="1" DbType="19" Length="1073741824" />
+                    <Field Name="passwordSalt" Ordinal="2" DbType="19" Length="1073741824" />
+                    <Field Name="passwordHash" Ordinal="3" DbType="19" Length="1073741824" />
+                    <Field Name="tokenCreatedAt" Ordinal="4" DbType="22" />
+                    <Field Name="tokenExpiresAt" Ordinal="5" DbType="22" />
+                    <Field Name="id" Ordinal="6" IsPrimaryKey="true" DbType="28" />
+                  </Fields>
+                </Table>
+                <Table Name="VersionInfo">
+                  <Fields>
+                    <Field Name="Version" Ordinal="1" DbType="10" Precision="20" />
+                    <Field Name="AppliedOn" Ordinal="2" IsOptional="true" DbType="22" />
+                    <Field Name="Description" Ordinal="3" IsOptional="true" DbType="24" Length="1024" />
+                  </Fields>
+                </Table>
+              </Tables>
+            </Schema>
+          </Schemas>
+        </Catalog>
+      </Catalogs>
+    </TargetDatabase>
+  </TargetDatabases>
+  <MappingStores>
+    <MappingStore Type="88EBFD8C-CBDD-4452-88AF-1C99E41A123F">
+      <EntityMappings>
+        <EntityMapping EntityName=":Category" TargetName="mina:public:Category">
+          <FieldMappings>
+            <FieldMapping FieldName="Id" TargetFieldName="id" />
+            <FieldMapping FieldName="Name" TargetFieldName="name" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":Ingredient" TargetName="mina:public:Ingredient">
+          <FieldMappings>
+            <FieldMapping FieldName="Content" TargetFieldName="content" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":Instruction" TargetName="mina:public:Instruction">
+          <FieldMappings>
+            <FieldMapping FieldName="Content" TargetFieldName="content" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":Recipe" TargetName="mina:public:Recipe">
+          <FieldMappings>
+            <FieldMapping FieldName="Id" TargetFieldName="id" />
+            <FieldMapping FieldName="Title" TargetFieldName="title" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":RecipeCategory" TargetName="mina:public:RecipeCategory">
+          <FieldMappings>
+            <FieldMapping FieldName="Category" TargetFieldName="category" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" />
+            <FieldMapping FieldName="Recipe" TargetFieldName="recipe" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":RecipeIngredient" TargetName="mina:public:RecipeIngredient">
+          <FieldMappings>
+            <FieldMapping FieldName="Category" TargetFieldName="category" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" />
+            <FieldMapping FieldName="Rank" TargetFieldName="rank" />
+            <FieldMapping FieldName="Recipe" TargetFieldName="recipe" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":RecipeInstruction" TargetName="mina:public:RecipeInstruction">
+          <FieldMappings>
+            <FieldMapping FieldName="Category" TargetFieldName="category" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" />
+            <FieldMapping FieldName="Rank" TargetFieldName="rank" />
+            <FieldMapping FieldName="Recipe" TargetFieldName="recipe" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":User" TargetName="mina:public:User">
+          <FieldMappings>
+            <FieldMapping FieldName="Id" TargetFieldName="id" />
+            <FieldMapping FieldName="PasswordHash" TargetFieldName="passwordHash" />
+            <FieldMapping FieldName="PasswordSalt" TargetFieldName="passwordSalt" />
+            <FieldMapping FieldName="TokenCreatedAt" TargetFieldName="tokenCreatedAt" />
+            <FieldMapping FieldName="TokenExpiresAt" TargetFieldName="tokenExpiresAt" />
+            <FieldMapping FieldName="UserName" TargetFieldName="userName" />
+          </FieldMappings>
+        </EntityMapping>
+      </EntityMappings>
+      <TypedViewMappings />
+      <SPCallMappings />
+      <TvfCallMappings />
+      <TypeConversionDefinitions />
+    </MappingStore>
+  </MappingStores>
+  <ModelViews />
+</Project>
