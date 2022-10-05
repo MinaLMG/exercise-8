@@ -235,14 +235,25 @@ public class Data
         this.DBConfiguration = DBConfig;
         RuntimeConfiguration.ConfigureDQE<PostgreSqlDQEConfiguration>(c => c.AddDbProviderFactory(typeof(Npgsql.NpgsqlFactory)));
     }
-    public IResult AddCategory(Category to_add)
+    async public Task<IResult> AddCategory(Category to_add)
     {
         to_add.ID = Guid.NewGuid();
-        this.Categories.Add(to_add);
-        this.CategoriesMap[to_add.Name] = to_add.ID;
-        this.CategoriesNamesMap[to_add.ID] = to_add.Name;
-        this.WriteInFolder(JsonSerializer.Serialize(this.Categories, this.Options), this.CategoriesLoc);
-        return Results.Json(to_add);
+        using (var adapter = new DataAccessAdapter(DBConfiguration["connectionString"]))
+        {
+            CategoryEntity category = new CategoryEntity
+            {
+                Id = to_add.ID,
+                Name = to_add.Name
+            };
+            var x = await adapter.SaveEntityAsync(category);
+            //this.Categories.Add(to_add);
+            //this.CategoriesMap[to_add.Name] = to_add.ID;
+            //this.CategoriesNamesMap[to_add.ID] = to_add.Name;
+            //this.WriteInFolder(JsonSerializer.Serialize(this.Categories, this.Options), this.CategoriesLoc);
+
+            return x ? Results.Json(to_add) : Results.Conflict("something went wrong with data base");
+            
+        }
     }
     public IResult EditCategory(Guid id, Category newCategory)
     {
@@ -398,7 +409,7 @@ public class Data
 public class Pages
 {
     public Data Data { get; set; }
-    public IResult CheckCategory(Category c, string action, Guid id = new Guid())
+    public async Task <IResult> CheckCategory(Category c, string action, Guid id = new Guid())
     {
         if (c.Name == null || c.Name.Trim() == "")
         {
@@ -409,7 +420,7 @@ public class Pages
         switch (action)
         {
             case "add":
-                return Data.AddCategory(c);
+                return await Data.AddCategory(c);
 
 
             case "edit":
@@ -491,14 +502,14 @@ public class Pages
         //return Results.Json(Data.Categories);
     }
     [HttpPost, Authorize]
-    public IResult CreateCategory([FromBody] Category c)
+    async public Task<IResult> CreateCategory([FromBody] Category c)
     {
-        return CheckCategory(c, "add");
+        return await CheckCategory(c, "add");
     }
     [Authorize]
-    public IResult EditCategory(Guid id, [FromBody] Category c)
+    async public Task<IResult> EditCategory(Guid id, [FromBody] Category c)
     {
-        return CheckCategory(c, "edit", id);
+        return await CheckCategory(c, "edit", id);
     }
     [Authorize]
     public IResult DeleteCategory(Guid id)
