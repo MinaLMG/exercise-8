@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{410B729D-0050-4477-9B3C-991AAD64F0AC}</ProjectGuid>
+    <ProjectGuid>{251A29C6-D589-44F1-9BBE-F03730514819}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ex_8.DatabaseSpecific</RootNamespace>

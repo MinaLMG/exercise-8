@@ -91,10 +91,10 @@ namespace ex_8.DatabaseSpecific
 		private void InitRecipeIngredientEntityMappings()
 		{
 			this.AddElementMapping("RecipeIngredientEntity", @"mina", @"public", "RecipeIngredient", 4, 0);
-			this.AddElementFieldMapping("RecipeIngredientEntity", "Category", "category", false, "Text", 1073741824, 0, 0, false, "", null, typeof(System.String), 0);
+			this.AddElementFieldMapping("RecipeIngredientEntity", "Category", "category", false, "Uuid", 0, 0, 0, false, "", null, typeof(System.Guid), 0);
 			this.AddElementFieldMapping("RecipeIngredientEntity", "Id", "id", false, "Uuid", 0, 0, 0, false, "", null, typeof(System.Guid), 1);
 			this.AddElementFieldMapping("RecipeIngredientEntity", "Rank", "rank", false, "Integer", 0, 10, 0, false, "", null, typeof(System.Int32), 2);
-			this.AddElementFieldMapping("RecipeIngredientEntity", "Recipe", "recipe", false, "Text", 1073741824, 0, 0, false, "", null, typeof(System.String), 3);
+			this.AddElementFieldMapping("RecipeIngredientEntity", "Recipe", "recipe", false, "Uuid", 0, 0, 0, false, "", null, typeof(System.Guid), 3);
 		}
 
 		/// <summary>Inits RecipeInstructionEntity's mappings</summary>

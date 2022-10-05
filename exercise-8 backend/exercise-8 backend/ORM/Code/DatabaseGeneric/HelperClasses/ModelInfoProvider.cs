@@ -97,10 +97,10 @@ namespace ex_8.HelperClasses
 		private void InitRecipeIngredientEntityInfo()
 		{
 			this.AddFieldIndexEnumForElementName(typeof(RecipeIngredientFieldIndex), "RecipeIngredientEntity");
-			this.AddElementFieldInfo("RecipeIngredientEntity", "Category", typeof(System.String), false, false, false, false,  (int)RecipeIngredientFieldIndex.Category, 1073741824, 0, 0);
+			this.AddElementFieldInfo("RecipeIngredientEntity", "Category", typeof(System.Guid), false, false, false, false,  (int)RecipeIngredientFieldIndex.Category, 0, 0, 0);
 			this.AddElementFieldInfo("RecipeIngredientEntity", "Id", typeof(System.Guid), true, false, false, false,  (int)RecipeIngredientFieldIndex.Id, 0, 0, 0);
 			this.AddElementFieldInfo("RecipeIngredientEntity", "Rank", typeof(System.Int32), false, false, false, false,  (int)RecipeIngredientFieldIndex.Rank, 0, 0, 10);
-			this.AddElementFieldInfo("RecipeIngredientEntity", "Recipe", typeof(System.String), false, false, false, false,  (int)RecipeIngredientFieldIndex.Recipe, 1073741824, 0, 0);
+			this.AddElementFieldInfo("RecipeIngredientEntity", "Recipe", typeof(System.Guid), false, false, false, false,  (int)RecipeIngredientFieldIndex.Recipe, 0, 0, 0);
 		}
 
 		/// <summary>Inits RecipeInstructionEntity's info objects</summary>
