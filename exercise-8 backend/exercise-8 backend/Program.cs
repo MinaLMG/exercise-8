@@ -486,7 +486,7 @@ public class Pages
         using (var adapter = new DataAccessAdapter(Data.DBConfiguration["connectionString"]))
         {
             var metaData = new LinqMetaData(adapter);
-            return Results.Json( metaData.Category.OrderBy(c => c.Name).ToList());
+            return Results.Json(metaData.Category.OrderBy(c => c.Name).ToList());
         }
         //return Results.Json(Data.Categories);
     }
@@ -519,21 +519,29 @@ public class Pages
                 recipe.ID = r.Id;
                 List<Guid> ingredients = metaData.RecipeIngredient
                     .Where(ing => ing.Recipe == r.Id)
-                    .Select(ing => ing.Category)
+                    .Select(ing => ing.Ingredient)
                     .ToList();
                 List<Guid> instructions = metaData.RecipeInstruction
                     .Where(ins => ins.Recipe == r.Id)
-                    .Select(ins => ins.ins)
+                    .Select(ins => ins.Instruction)
                     .ToList();
-                List<Guid> guids = metaData.RecipeCategory
+                List<Guid> categories = metaData.RecipeCategory
                     .Where(cat => cat.Recipe == r.Id)
-                    .Select(g => g.CategoryId)
+                    .Select(cat => cat.Category)
                     .ToList();
-                recipes.Add(
-                    recipe
-                );
+                ingredients.ForEach(i => recipe.Ingredients.Add(metaData.Ingredient
+                                   .Where(ing => ing.Id == i)
+                                   .Select(ing => ing.Content)
+                                   .ToList()[0]));
+
+                instructions.ForEach(i => recipe.Instructions.Add(metaData.Instruction
+                                   .Where(ins => ins.Id == i)
+                                   .Select(ins => ins.Content)
+                                   .ToList()[0]));
+                recipe.Categories = categories;
+                recipes.Add(recipe);
             }
-            return Results.Json(metaData.Recipe.OrderBy(c => c.Title).ToList());
+            return Results.Json(recipes);
         }
         //return Results.Json(Data.Recipes);
     }
