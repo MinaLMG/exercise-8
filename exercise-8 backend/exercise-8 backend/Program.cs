@@ -100,6 +100,7 @@ public class Data
     public string CategoriesLoc { get; set; }
     public string UsersLoc { get; set; }
     public JsonSerializerOptions Options { get; set; }
+    public IConfiguration DBConfiguration { get; }
 
     public void WriteInFolder(string text, string path)
     {
@@ -227,6 +228,12 @@ public class Data
             .AddEnvironmentVariables()
             .Build();
         this.configuration = config;
+        IConfiguration DBConfig = new ConfigurationBuilder()
+         .AddJsonFile("DB.json")
+         .AddEnvironmentVariables()
+         .Build();
+        this.DBConfiguration = DBConfig;
+        RuntimeConfiguration.ConfigureDQE<PostgreSqlDQEConfiguration>(c => c.AddDbProviderFactory(typeof(Npgsql.NpgsqlFactory)));
     }
     public IResult AddCategory(Category to_add)
     {
@@ -474,6 +481,15 @@ public class Pages
         return Results.Ok();
 
     }
+    public IResult ListCategories()
+    {
+        using (var adapter = new DataAccessAdapter(Data.DBConfiguration["connectionString"]))
+        {
+            var metaData = new LinqMetaData(adapter);
+            return Results.Json( metaData.Category.OrderBy(c => c.Name).ToList());
+        }
+        //return Results.Json(Data.Categories);
+    }
     [HttpPost, Authorize]
     public IResult CreateCategory([FromBody] Category c)
     {
@@ -490,6 +506,15 @@ public class Pages
         return Data.DeleteCategory(id);
     }
 
+    public IResult ListRecipes()
+    {
+        using (var adapter = new DataAccessAdapter(Data.DBConfiguration["connectionString"]))
+        {
+            var metaData = new LinqMetaData(adapter);
+            return Results.Json(metaData.Recipe.OrderBy(c => c.Title).ToList());
+        }
+        //return Results.Json(Data.Recipes);
+    }
     //[HttpPost,Authorize] 
     [Authorize]
     public IResult CreateRecipe([FromBody] Recipe r)
@@ -551,7 +576,7 @@ public class Pages
     }
     public void CategoryPages(IEndpointRouteBuilder endpoints)
     {
-        endpoints.MapGet("/categories", () => Results.Json(Data.Categories));
+        endpoints.MapGet("/categories", ListCategories);
         endpoints.MapPost("/categories", CreateCategory);
         endpoints.MapPut("/categories/{id}", EditCategory);
         endpoints.MapDelete("/categories/{id}", DeleteCategory);
@@ -559,7 +584,7 @@ public class Pages
 
     public void RecipePages(IEndpointRouteBuilder endpoints)
     {
-        endpoints.MapGet("/recipes", () => Results.Json(Data.Recipes));
+        endpoints.MapGet("/recipes", ListRecipes);
         endpoints.MapPost("/recipes", CreateRecipe);
         endpoints.MapPut("/recipes/{id}", EditRecipe);
         endpoints.MapDelete("/recipes/{id}", DeleteRecipe);
