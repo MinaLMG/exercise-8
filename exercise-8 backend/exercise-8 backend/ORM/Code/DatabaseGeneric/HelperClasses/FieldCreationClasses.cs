@@ -60,10 +60,10 @@ namespace ex_8.HelperClasses
 	/// <summary>Field Creation Class for entity RecipeIngredientEntity</summary>
 	public partial class RecipeIngredientFields
 	{
-		/// <summary>Creates a new RecipeIngredientEntity.Category field instance</summary>
-		public static EntityField2 Category { get { return ModelInfoProviderSingleton.GetInstance().CreateField2(RecipeIngredientFieldIndex.Category); }}
 		/// <summary>Creates a new RecipeIngredientEntity.Id field instance</summary>
 		public static EntityField2 Id { get { return ModelInfoProviderSingleton.GetInstance().CreateField2(RecipeIngredientFieldIndex.Id); }}
+		/// <summary>Creates a new RecipeIngredientEntity.Ingredient field instance</summary>
+		public static EntityField2 Ingredient { get { return ModelInfoProviderSingleton.GetInstance().CreateField2(RecipeIngredientFieldIndex.Ingredient); }}
 		/// <summary>Creates a new RecipeIngredientEntity.Rank field instance</summary>
 		public static EntityField2 Rank { get { return ModelInfoProviderSingleton.GetInstance().CreateField2(RecipeIngredientFieldIndex.Rank); }}
 		/// <summary>Creates a new RecipeIngredientEntity.Recipe field instance</summary>
@@ -73,10 +73,10 @@ namespace ex_8.HelperClasses
 	/// <summary>Field Creation Class for entity RecipeInstructionEntity</summary>
 	public partial class RecipeInstructionFields
 	{
-		/// <summary>Creates a new RecipeInstructionEntity.Category field instance</summary>
-		public static EntityField2 Category { get { return ModelInfoProviderSingleton.GetInstance().CreateField2(RecipeInstructionFieldIndex.Category); }}
 		/// <summary>Creates a new RecipeInstructionEntity.Id field instance</summary>
 		public static EntityField2 Id { get { return ModelInfoProviderSingleton.GetInstance().CreateField2(RecipeInstructionFieldIndex.Id); }}
+		/// <summary>Creates a new RecipeInstructionEntity.Instruction field instance</summary>
+		public static EntityField2 Instruction { get { return ModelInfoProviderSingleton.GetInstance().CreateField2(RecipeInstructionFieldIndex.Instruction); }}
 		/// <summary>Creates a new RecipeInstructionEntity.Rank field instance</summary>
 		public static EntityField2 Rank { get { return ModelInfoProviderSingleton.GetInstance().CreateField2(RecipeInstructionFieldIndex.Rank); }}
 		/// <summary>Creates a new RecipeInstructionEntity.Recipe field instance</summary>

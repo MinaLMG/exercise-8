@@ -129,20 +129,20 @@ namespace ex_8.EntityClasses
 		/// <summary>The relations object holding all relations of this entity with other entity classes.</summary>
 		public static RecipeInstructionRelations Relations { get { return _relationsFactory; } }
 
-		/// <summary>The Category property of the Entity RecipeInstruction<br/><br/></summary>
-		/// <remarks>Mapped on  table field: "RecipeInstruction"."category".<br/>Table field type characteristics (type, precision, scale, length): Text, 0, 0, 1073741824.<br/>Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
-		public virtual System.String Category
-		{
-			get { return (System.String)GetValue((int)RecipeInstructionFieldIndex.Category, true); }
-			set	{ SetValue((int)RecipeInstructionFieldIndex.Category, value); }
-		}
-
 		/// <summary>The Id property of the Entity RecipeInstruction<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "RecipeInstruction"."id".<br/>Table field type characteristics (type, precision, scale, length): Uuid, 0, 0, 0.<br/>Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)RecipeInstructionFieldIndex.Id, true); }
 			set	{ SetValue((int)RecipeInstructionFieldIndex.Id, value); }
+		}
+
+		/// <summary>The Instruction property of the Entity RecipeInstruction<br/><br/></summary>
+		/// <remarks>Mapped on  table field: "RecipeInstruction"."instruction".<br/>Table field type characteristics (type, precision, scale, length): Uuid, 0, 0, 0.<br/>Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		public virtual System.Guid Instruction
+		{
+			get { return (System.Guid)GetValue((int)RecipeInstructionFieldIndex.Instruction, true); }
+			set	{ SetValue((int)RecipeInstructionFieldIndex.Instruction, value); }
 		}
 
 		/// <summary>The Rank property of the Entity RecipeInstruction<br/><br/></summary>
@@ -154,10 +154,10 @@ namespace ex_8.EntityClasses
 		}
 
 		/// <summary>The Recipe property of the Entity RecipeInstruction<br/><br/></summary>
-		/// <remarks>Mapped on  table field: "RecipeInstruction"."recipe".<br/>Table field type characteristics (type, precision, scale, length): Text, 0, 0, 1073741824.<br/>Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
-		public virtual System.String Recipe
+		/// <remarks>Mapped on  table field: "RecipeInstruction"."recipe".<br/>Table field type characteristics (type, precision, scale, length): Uuid, 0, 0, 0.<br/>Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		public virtual System.Guid Recipe
 		{
-			get { return (System.String)GetValue((int)RecipeInstructionFieldIndex.Recipe, true); }
+			get { return (System.Guid)GetValue((int)RecipeInstructionFieldIndex.Recipe, true); }
 			set	{ SetValue((int)RecipeInstructionFieldIndex.Recipe, value); }
 		}
 		// __LLBLGENPRO_USER_CODE_REGION_START CustomEntityCode
@@ -171,10 +171,10 @@ namespace ex_8
 {
 	public enum RecipeInstructionFieldIndex
 	{
-		///<summary>Category. </summary>
-		Category,
 		///<summary>Id. </summary>
 		Id,
+		///<summary>Instruction. </summary>
+		Instruction,
 		///<summary>Rank. </summary>
 		Rank,
 		///<summary>Recipe. </summary>

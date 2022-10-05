@@ -511,6 +511,28 @@ public class Pages
         using (var adapter = new DataAccessAdapter(Data.DBConfiguration["connectionString"]))
         {
             var metaData = new LinqMetaData(adapter);
+            List<Recipe> recipes = new();
+            foreach (var r in metaData.Recipe.OrderBy(r => r.Title).ToList())
+            {
+                Recipe recipe = new Recipe();
+                recipe.Title = r.Title; ;
+                recipe.ID = r.Id;
+                List<Guid> ingredients = metaData.RecipeIngredient
+                    .Where(ing => ing.Recipe == r.Id)
+                    .Select(ing => ing.Category)
+                    .ToList();
+                List<Guid> instructions = metaData.RecipeInstruction
+                    .Where(ins => ins.Recipe == r.Id)
+                    .Select(ins => ins.ins)
+                    .ToList();
+                List<Guid> guids = metaData.RecipeCategory
+                    .Where(cat => cat.Recipe == r.Id)
+                    .Select(g => g.CategoryId)
+                    .ToList();
+                recipes.Add(
+                    recipe
+                );
+            }
             return Results.Json(metaData.Recipe.OrderBy(c => c.Title).ToList());
         }
         //return Results.Json(Data.Recipes);

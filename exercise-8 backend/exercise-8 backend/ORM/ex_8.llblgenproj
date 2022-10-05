@@ -133,54 +133,54 @@
   <EntityModel>
     <ValueTypeDefinitions />
     <EntityDefinitions>
-      <EntityDefinition Name="Category" ObjectID="f286f340-da8e-44ff-bf3d-11418993917b">
+      <EntityDefinition Name="Category" ObjectID="d987230e-4ff1-4f92-b2cf-2ffd120487c8">
         <Fields>
           <Field Name="Id" Type="guid" IsPrimaryKey="true" />
           <Field Name="Name" Type="string" MaxLength="1073741824" />
         </Fields>
       </EntityDefinition>
-      <EntityDefinition Name="Ingredient" ObjectID="12898308-c7bf-47d4-9e46-fac766badaff">
+      <EntityDefinition Name="Ingredient" ObjectID="9b02d25d-cef2-4212-af18-fcce65c1af5f">
         <Fields>
           <Field Name="Content" Type="string" MaxLength="1073741824" />
           <Field Name="Id" Type="guid" IsPrimaryKey="true" />
         </Fields>
       </EntityDefinition>
-      <EntityDefinition Name="Instruction" ObjectID="5196cfae-30e4-4609-bf2b-2ab2876da675">
+      <EntityDefinition Name="Instruction" ObjectID="9bbe9e46-a7b6-4dff-87e8-580e13d795f4">
         <Fields>
           <Field Name="Content" Type="string" MaxLength="1073741824" />
           <Field Name="Id" Type="guid" IsPrimaryKey="true" />
         </Fields>
       </EntityDefinition>
-      <EntityDefinition Name="Recipe" ObjectID="cae70540-dc50-4eb6-970d-834aca236ac5">
+      <EntityDefinition Name="Recipe" ObjectID="585efe68-2ce8-4daf-8268-23ee3e4b61a9">
         <Fields>
           <Field Name="Id" Type="guid" IsPrimaryKey="true" />
           <Field Name="Title" Type="string" MaxLength="1073741824" />
         </Fields>
       </EntityDefinition>
-      <EntityDefinition Name="RecipeCategory" ObjectID="e9309dc1-a23d-416f-b390-24d541c90a1c">
-        <Fields>
-          <Field Name="Category" Type="string" MaxLength="1073741824" />
-          <Field Name="Id" Type="guid" IsPrimaryKey="true" />
-          <Field Name="Recipe" Type="string" MaxLength="1073741824" />
-        </Fields>
-      </EntityDefinition>
-      <EntityDefinition Name="RecipeIngredient" ObjectID="8cf6b4a8-6c50-4bb9-97c8-64a881ed0df8">
+      <EntityDefinition Name="RecipeCategory" ObjectID="600d8fb0-6d19-4884-9778-41c43dd57b7d">
         <Fields>
           <Field Name="Category" Type="guid" />
           <Field Name="Id" Type="guid" IsPrimaryKey="true" />
+          <Field Name="Recipe" Type="guid" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="RecipeIngredient" ObjectID="b259d0a2-36f7-4e5c-b14c-0eaec30acfd2">
+        <Fields>
+          <Field Name="Id" Type="guid" IsPrimaryKey="true" />
+          <Field Name="Ingredient" Type="guid" />
           <Field Name="Rank" Type="int" Precision="10" />
           <Field Name="Recipe" Type="guid" />
         </Fields>
       </EntityDefinition>
-      <EntityDefinition Name="RecipeInstruction" ObjectID="1f6aa668-909b-4fc4-a0ca-db0ef3c9d09e">
+      <EntityDefinition Name="RecipeInstruction" ObjectID="a2554981-1601-42a9-9d88-e4434a3ba33e">
         <Fields>
-          <Field Name="Category" Type="string" MaxLength="1073741824" />
           <Field Name="Id" Type="guid" IsPrimaryKey="true" />
+          <Field Name="Instruction" Type="guid" />
           <Field Name="Rank" Type="int" Precision="10" />
-          <Field Name="Recipe" Type="string" MaxLength="1073741824" />
+          <Field Name="Recipe" Type="guid" />
         </Fields>
       </EntityDefinition>
-      <EntityDefinition Name="User" ObjectID="6d0e0e73-7261-465a-815a-633e7638689d">
+      <EntityDefinition Name="User" ObjectID="31687573-7e46-4cc1-ae29-ea0c5ff8cfde">
         <Fields>
           <Field Name="Id" Type="guid" IsPrimaryKey="true" />
           <Field Name="PasswordHash" Type="string" MaxLength="1073741824" />
@@ -210,7 +210,7 @@
       <Catalogs>
         <Catalog Name="mina" SyncSource="2">
           <Schemas>
-            <Schema Name="public" SyncSource="2" LastSyncWithDatabase="2022-10-05T15:07:35.3830932Z">
+            <Schema Name="public" SyncSource="2" LastSyncWithDatabase="2022-10-05T15:46:11.423744Z">
               <Tables>
                 <Table Name="Category">
                   <PkConstraintName Name="PK_Category" />
@@ -243,8 +243,8 @@
                 <Table Name="RecipeCategory">
                   <PkConstraintName Name="PK_RecipeCategory" />
                   <Fields>
-                    <Field Name="recipe" Ordinal="1" DbType="19" Length="1073741824" />
-                    <Field Name="category" Ordinal="2" DbType="19" Length="1073741824" />
+                    <Field Name="recipe" Ordinal="1" DbType="28" />
+                    <Field Name="category" Ordinal="2" DbType="28" />
                     <Field Name="id" Ordinal="3" IsPrimaryKey="true" DbType="28" />
                   </Fields>
                 </Table>
@@ -252,7 +252,7 @@
                   <PkConstraintName Name="PK_RecipeIngredient" />
                   <Fields>
                     <Field Name="recipe" Ordinal="1" DbType="28" />
-                    <Field Name="category" Ordinal="2" DbType="28" />
+                    <Field Name="ingredient" Ordinal="2" DbType="28" />
                     <Field Name="rank" Ordinal="3" DbType="9" Precision="10" />
                     <Field Name="id" Ordinal="4" IsPrimaryKey="true" DbType="28" />
                   </Fields>
@@ -260,8 +260,8 @@
                 <Table Name="RecipeInstruction">
                   <PkConstraintName Name="PK_RecipeInstruction" />
                   <Fields>
-                    <Field Name="recipe" Ordinal="1" DbType="19" Length="1073741824" />
-                    <Field Name="category" Ordinal="2" DbType="19" Length="1073741824" />
+                    <Field Name="recipe" Ordinal="1" DbType="28" />
+                    <Field Name="instruction" Ordinal="2" DbType="28" />
                     <Field Name="rank" Ordinal="3" DbType="9" Precision="10" />
                     <Field Name="id" Ordinal="4" IsPrimaryKey="true" DbType="28" />
                   </Fields>
@@ -327,16 +327,16 @@
         </EntityMapping>
         <EntityMapping EntityName=":RecipeIngredient" TargetName="mina:public:RecipeIngredient">
           <FieldMappings>
-            <FieldMapping FieldName="Category" TargetFieldName="category" />
             <FieldMapping FieldName="Id" TargetFieldName="id" />
+            <FieldMapping FieldName="Ingredient" TargetFieldName="ingredient" />
             <FieldMapping FieldName="Rank" TargetFieldName="rank" />
             <FieldMapping FieldName="Recipe" TargetFieldName="recipe" />
           </FieldMappings>
         </EntityMapping>
         <EntityMapping EntityName=":RecipeInstruction" TargetName="mina:public:RecipeInstruction">
           <FieldMappings>
-            <FieldMapping FieldName="Category" TargetFieldName="category" />
             <FieldMapping FieldName="Id" TargetFieldName="id" />
+            <FieldMapping FieldName="Instruction" TargetFieldName="instruction" />
             <FieldMapping FieldName="Rank" TargetFieldName="rank" />
             <FieldMapping FieldName="Recipe" TargetFieldName="recipe" />
           </FieldMappings>

@@ -23,7 +23,7 @@ namespace Database.Seeds
 
             foreach ((Guid, string) category in seeds)
             {
-                Insert.IntoTable(tableName: Tables.Category).Row(new
+                Insert.IntoTable(tableName: Tables.Categories).Row(new
                 {
                     id = category.Item1,
                     name = category.Item2

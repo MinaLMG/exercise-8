@@ -82,17 +82,17 @@ namespace ex_8.DatabaseSpecific
 		private void InitRecipeCategoryEntityMappings()
 		{
 			this.AddElementMapping("RecipeCategoryEntity", @"mina", @"public", "RecipeCategory", 3, 0);
-			this.AddElementFieldMapping("RecipeCategoryEntity", "Category", "category", false, "Text", 1073741824, 0, 0, false, "", null, typeof(System.String), 0);
+			this.AddElementFieldMapping("RecipeCategoryEntity", "Category", "category", false, "Uuid", 0, 0, 0, false, "", null, typeof(System.Guid), 0);
 			this.AddElementFieldMapping("RecipeCategoryEntity", "Id", "id", false, "Uuid", 0, 0, 0, false, "", null, typeof(System.Guid), 1);
-			this.AddElementFieldMapping("RecipeCategoryEntity", "Recipe", "recipe", false, "Text", 1073741824, 0, 0, false, "", null, typeof(System.String), 2);
+			this.AddElementFieldMapping("RecipeCategoryEntity", "Recipe", "recipe", false, "Uuid", 0, 0, 0, false, "", null, typeof(System.Guid), 2);
 		}
 
 		/// <summary>Inits RecipeIngredientEntity's mappings</summary>
 		private void InitRecipeIngredientEntityMappings()
 		{
 			this.AddElementMapping("RecipeIngredientEntity", @"mina", @"public", "RecipeIngredient", 4, 0);
-			this.AddElementFieldMapping("RecipeIngredientEntity", "Category", "category", false, "Uuid", 0, 0, 0, false, "", null, typeof(System.Guid), 0);
-			this.AddElementFieldMapping("RecipeIngredientEntity", "Id", "id", false, "Uuid", 0, 0, 0, false, "", null, typeof(System.Guid), 1);
+			this.AddElementFieldMapping("RecipeIngredientEntity", "Id", "id", false, "Uuid", 0, 0, 0, false, "", null, typeof(System.Guid), 0);
+			this.AddElementFieldMapping("RecipeIngredientEntity", "Ingredient", "ingredient", false, "Uuid", 0, 0, 0, false, "", null, typeof(System.Guid), 1);
 			this.AddElementFieldMapping("RecipeIngredientEntity", "Rank", "rank", false, "Integer", 0, 10, 0, false, "", null, typeof(System.Int32), 2);
 			this.AddElementFieldMapping("RecipeIngredientEntity", "Recipe", "recipe", false, "Uuid", 0, 0, 0, false, "", null, typeof(System.Guid), 3);
 		}
@@ -101,10 +101,10 @@ namespace ex_8.DatabaseSpecific
 		private void InitRecipeInstructionEntityMappings()
 		{
 			this.AddElementMapping("RecipeInstructionEntity", @"mina", @"public", "RecipeInstruction", 4, 0);
-			this.AddElementFieldMapping("RecipeInstructionEntity", "Category", "category", false, "Text", 1073741824, 0, 0, false, "", null, typeof(System.String), 0);
-			this.AddElementFieldMapping("RecipeInstructionEntity", "Id", "id", false, "Uuid", 0, 0, 0, false, "", null, typeof(System.Guid), 1);
+			this.AddElementFieldMapping("RecipeInstructionEntity", "Id", "id", false, "Uuid", 0, 0, 0, false, "", null, typeof(System.Guid), 0);
+			this.AddElementFieldMapping("RecipeInstructionEntity", "Instruction", "instruction", false, "Uuid", 0, 0, 0, false, "", null, typeof(System.Guid), 1);
 			this.AddElementFieldMapping("RecipeInstructionEntity", "Rank", "rank", false, "Integer", 0, 10, 0, false, "", null, typeof(System.Int32), 2);
-			this.AddElementFieldMapping("RecipeInstructionEntity", "Recipe", "recipe", false, "Text", 1073741824, 0, 0, false, "", null, typeof(System.String), 3);
+			this.AddElementFieldMapping("RecipeInstructionEntity", "Recipe", "recipe", false, "Uuid", 0, 0, 0, false, "", null, typeof(System.Guid), 3);
 		}
 
 		/// <summary>Inits UserEntity's mappings</summary>

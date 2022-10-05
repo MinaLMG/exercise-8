@@ -32,7 +32,7 @@ namespace Database.Seeds
                 {
                     id = recipeIngredient.Item4,
                     recipe = recipeIngredient.Item1,
-                    category = recipeIngredient.Item2,
+                    ingredient = recipeIngredient.Item2,
                     rank = recipeIngredient.Item3,
                 });
             }

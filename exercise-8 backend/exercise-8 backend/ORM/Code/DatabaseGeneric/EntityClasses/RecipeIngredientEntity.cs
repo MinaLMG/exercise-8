@@ -129,20 +129,20 @@ namespace ex_8.EntityClasses
 		/// <summary>The relations object holding all relations of this entity with other entity classes.</summary>
 		public static RecipeIngredientRelations Relations { get { return _relationsFactory; } }
 
-		/// <summary>The Category property of the Entity RecipeIngredient<br/><br/></summary>
-		/// <remarks>Mapped on  table field: "RecipeIngredient"."category".<br/>Table field type characteristics (type, precision, scale, length): Uuid, 0, 0, 0.<br/>Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
-		public virtual System.Guid Category
-		{
-			get { return (System.Guid)GetValue((int)RecipeIngredientFieldIndex.Category, true); }
-			set	{ SetValue((int)RecipeIngredientFieldIndex.Category, value); }
-		}
-
 		/// <summary>The Id property of the Entity RecipeIngredient<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "RecipeIngredient"."id".<br/>Table field type characteristics (type, precision, scale, length): Uuid, 0, 0, 0.<br/>Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)RecipeIngredientFieldIndex.Id, true); }
 			set	{ SetValue((int)RecipeIngredientFieldIndex.Id, value); }
+		}
+
+		/// <summary>The Ingredient property of the Entity RecipeIngredient<br/><br/></summary>
+		/// <remarks>Mapped on  table field: "RecipeIngredient"."ingredient".<br/>Table field type characteristics (type, precision, scale, length): Uuid, 0, 0, 0.<br/>Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		public virtual System.Guid Ingredient
+		{
+			get { return (System.Guid)GetValue((int)RecipeIngredientFieldIndex.Ingredient, true); }
+			set	{ SetValue((int)RecipeIngredientFieldIndex.Ingredient, value); }
 		}
 
 		/// <summary>The Rank property of the Entity RecipeIngredient<br/><br/></summary>
@@ -171,10 +171,10 @@ namespace ex_8
 {
 	public enum RecipeIngredientFieldIndex
 	{
-		///<summary>Category. </summary>
-		Category,
 		///<summary>Id. </summary>
 		Id,
+		///<summary>Ingredient. </summary>
+		Ingredient,
 		///<summary>Rank. </summary>
 		Rank,
 		///<summary>Recipe. </summary>

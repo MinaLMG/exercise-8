@@ -8,7 +8,7 @@ namespace DataBase.Migrations
         {
             Create.Table("RecipeInstruction")
                 .WithColumn("recipe").AsGuid()
-                .WithColumn("category").AsGuid()
+                .WithColumn("instruction").AsGuid()
                 .WithColumn("rank").AsInt32()
                 .WithColumn("id").AsGuid().PrimaryKey();
         }

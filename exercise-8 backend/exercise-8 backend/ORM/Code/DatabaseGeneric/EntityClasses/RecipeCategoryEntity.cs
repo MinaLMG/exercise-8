@@ -130,10 +130,10 @@ namespace ex_8.EntityClasses
 		public static RecipeCategoryRelations Relations { get { return _relationsFactory; } }
 
 		/// <summary>The Category property of the Entity RecipeCategory<br/><br/></summary>
-		/// <remarks>Mapped on  table field: "RecipeCategory"."category".<br/>Table field type characteristics (type, precision, scale, length): Text, 0, 0, 1073741824.<br/>Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
-		public virtual System.String Category
+		/// <remarks>Mapped on  table field: "RecipeCategory"."category".<br/>Table field type characteristics (type, precision, scale, length): Uuid, 0, 0, 0.<br/>Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		public virtual System.Guid Category
 		{
-			get { return (System.String)GetValue((int)RecipeCategoryFieldIndex.Category, true); }
+			get { return (System.Guid)GetValue((int)RecipeCategoryFieldIndex.Category, true); }
 			set	{ SetValue((int)RecipeCategoryFieldIndex.Category, value); }
 		}
 
@@ -146,10 +146,10 @@ namespace ex_8.EntityClasses
 		}
 
 		/// <summary>The Recipe property of the Entity RecipeCategory<br/><br/></summary>
-		/// <remarks>Mapped on  table field: "RecipeCategory"."recipe".<br/>Table field type characteristics (type, precision, scale, length): Text, 0, 0, 1073741824.<br/>Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
-		public virtual System.String Recipe
+		/// <remarks>Mapped on  table field: "RecipeCategory"."recipe".<br/>Table field type characteristics (type, precision, scale, length): Uuid, 0, 0, 0.<br/>Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		public virtual System.Guid Recipe
 		{
-			get { return (System.String)GetValue((int)RecipeCategoryFieldIndex.Recipe, true); }
+			get { return (System.Guid)GetValue((int)RecipeCategoryFieldIndex.Recipe, true); }
 			set	{ SetValue((int)RecipeCategoryFieldIndex.Recipe, value); }
 		}
 		// __LLBLGENPRO_USER_CODE_REGION_START CustomEntityCode
