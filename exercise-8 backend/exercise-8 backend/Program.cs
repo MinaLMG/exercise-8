@@ -252,52 +252,53 @@ public class Data
             //this.WriteInFolder(JsonSerializer.Serialize(this.Categories, this.Options), this.CategoriesLoc);
 
             return x ? Results.Json(to_add) : Results.Conflict("something went wrong with data base");
-            
-        }
-    }
-    public IResult EditCategory(Guid id, Category newCategory)
-    {
-        Category toEdit;
-        try
-        {
-            toEdit = this.Categories.Single(x => x.ID == id);
-        }
-        catch
-        {
-            return Results.NotFound("No category exists with that id");
-        }
-        toEdit.Name = newCategory.Name;
-        this.WriteInFolder(JsonSerializer.Serialize(this.Categories, this.Options), this.CategoriesLoc);
-        return Results.Json(toEdit);
 
+        }
     }
-    public IResult DeleteCategory(Guid id)
+    async public Task<IResult> EditCategory(Guid id, Category newCategory)
     {
-        Category toDelete;
-        try
+        using (var adapter = new DataAccessAdapter(DBConfiguration["connectionString"]))
         {
-            toDelete = this.Categories.Single(x => x.ID == id);
-        }
-        catch
-        {
-            return Results.NotFound("No category exists with that id");
-        }
-        this.Categories.Remove(toDelete);
-        foreach (Recipe recipe in this.Recipes)
-        {
+            var metaData = new LinqMetaData(adapter);
+            CategoryEntity toEdit;
             try
             {
-                Guid toDelete2 = recipe.Categories.Single(x => x == id);
-                recipe.Categories.Remove(toDelete2);
+                toEdit = metaData.Category.Where(c => c.Id == id).ToList()[0];
             }
-            catch (Exception e)
+            catch
             {
-
+                return Results.NotFound("No category exists with that id");
             }
+            toEdit.Name = newCategory.Name;
+            var x = await adapter.SaveEntityAsync(toEdit);
+            return x ? Results.Json(toEdit) : Results.Conflict("something went wrong with data base");
         }
-        this.WriteInFolder(JsonSerializer.Serialize(this.Categories, this.Options), this.CategoriesLoc);
-        this.WriteInFolder(JsonSerializer.Serialize(this.Recipes, this.Options), this.RecipesLoc);
-        return Results.Json(toDelete);
+
+    }
+    async public Task<IResult> DeleteCategory(Guid id)
+    {
+        using (var adapter = new DataAccessAdapter(DBConfiguration["connectionString"]))
+        {
+            CategoryEntity toDelete;
+            var metaData = new LinqMetaData(adapter);
+            try
+            {
+                toDelete = metaData.Category.Where(c => c.Id == id).ToList()[0];
+            }
+            catch
+            {
+                return Results.NotFound("No category exists with that id");
+            }
+            Category returned = new();
+            returned.ID= toDelete.Id;
+            returned.Name = toDelete.Name;
+            await adapter.DeleteEntityAsync(toDelete);
+            foreach (RecipeCategoryEntity recipe in metaData.RecipeCategory.Where(r => r.Category == id).ToList())
+            {
+                await adapter.DeleteEntityAsync(recipe);
+            }
+            return Results.Json(returned);
+        }
     }
     public IResult EditRecipe(Guid id, Recipe newRecipe)
     {
@@ -409,7 +410,7 @@ public class Data
 public class Pages
 {
     public Data Data { get; set; }
-    public async Task <IResult> CheckCategory(Category c, string action, Guid id = new Guid())
+    public async Task<IResult> CheckCategory(Category c, string action, Guid id = new Guid())
     {
         if (c.Name == null || c.Name.Trim() == "")
         {
@@ -424,7 +425,7 @@ public class Pages
 
 
             case "edit":
-                return Data.EditCategory(id, c);
+                return await Data.EditCategory(id, c);
         }
         // should not be called 
         return Results.Ok();
@@ -512,9 +513,9 @@ public class Pages
         return await CheckCategory(c, "edit", id);
     }
     [Authorize]
-    public IResult DeleteCategory(Guid id)
+    async public Task<IResult> DeleteCategory(Guid id)
     {
-        return Data.DeleteCategory(id);
+        return await Data.DeleteCategory(id);
     }
 
     public IResult ListRecipes()

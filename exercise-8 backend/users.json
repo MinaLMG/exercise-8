@@ -11,8 +11,8 @@
     "UserName": "string",
     "PasswordHash": "J3jJwDqRVswFzCCbaaXOoiFxfmQZ0yW7UsnJFkOeCbQhiedHI2a2amZnXgClnISlncUwtq/qcMpRmLYO9NdR8g==",
     "PasswordSalt": "fn+G6uuXFyiGXumBxhDxggYzPK55iVh1qJL20Difw11YwWOAfjIAOzO5MJMBtnBjiarGtw1MyG1SBkMjEeIB1LCW43EGCfD96/Y9N8a6htHlDhg4MA/AxXsNs8ONAkIJTDSmjgs4jKuC1RLDT6BUeVk5/JpOqWn6VFuOgVhg/5E=",
-    "RefreshToken": "h1ai88itUwezlPP7YwhbFug8BzMxlk/Zuw4QWDqW0LAzHAdwgr\u002B23uITgZz7cKv0imO7rVOFKhVQPa9sFo7koA==",
-    "TokenCreatedAt": "2022-10-05T19:26:59.0720221+02:00",
-    "TokenExpiresAt": "2022-10-12T19:26:59.0720208+02:00"
+    "RefreshToken": "/YJ9na9G/iWxOYlmo8DQRYUxWZnRUlCIeqGRxvBMlMP0rLZm3giPelj/VKzzja/OLEg44rV9H39BaPvQvSklcA==",
+    "TokenCreatedAt": "2022-10-05T20:17:14.0227224+02:00",
+    "TokenExpiresAt": "2022-10-12T20:17:14.0226455+02:00"
   }
 ]
